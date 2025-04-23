@@ -11,7 +11,14 @@ import "fmt"
 
 var z = 10 //aqui
 
-//e por ser algo fora do codeblocks, não funciona o gopher. E ai necessita usar o var
+//e por ser algo fora do codeblocks, não funciona o gopher. E ai necessita usar o var. O Var torna a variável em "global", abrange o package inteiro
+
+// é possivel inicializar um var sem algo dentro, por exemplo:
+
+var w int 
+
+//e dentro do codigo atribur um valor:
+//w = 10
 
 func main(){
 	x := 10
