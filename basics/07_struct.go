@@ -39,6 +39,18 @@ type truck struct {
 }
 
 
+//metodos com struct
+
+//como chamamos:
+
+func (c car) printCar() string {
+	make := c.Make 
+	model := c.Model
+	result := "carro da marca: " + make + "e do modelo: " + model 
+	return result
+}
+
+
 func main(){
 	fmt.Println("teste")
 	newCar := car {Make: "Teste", Model: "Teste2", Height: 1, Width: 10} //assim que se inicializa uma variavel do tipo "car" segundo a struct que construimos
@@ -49,11 +61,11 @@ func main(){
 	fmt.Println(newCar2.Frontwheel.Material)
 
 	newTruck := truck {badSize: 10, car3: car3{Make: "Teste", Model: "Teste2"}} //assim se iniciliza structs que herdam caracteristicas. Os dados podem ser acessados com ose fossem pertecnetes a ela
-	
-
 
 	fmt.Println(newTruck.Make)
 
+	result := newCar.printCar() //assim que se printa uma funcao associada ao objeto
+	fmt.Println(result)
 
 
 }
