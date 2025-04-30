@@ -13,6 +13,26 @@ func soma(numeros ...int)int{
 	return total
 }
 
+func criaMatrix(rows, columns int) [][]int{
+	matrix := make([][]int, 0)
+	for i:=0; i < rows; i++{
+		row:= make([]int, 0)
+		for j := 0; j < columns; j++{
+			row = append(row, i*j)
+		}
+		matrix = append(matrix, row)
+	}
+	return matrix
+}
+
+func exibeMatrix(matriz [][]int) {
+	for i, linha := range matriz {
+		for j, valor := range linha {
+			fmt.Printf("matriz[%d][%d] = %d\n", i, j, valor)
+		}
+	}
+}
+
 
 func main(){
 	fmt.Println("teste")
@@ -47,8 +67,23 @@ func main(){
 	somaTotal2 := soma(numeros...) //se chama assim um slice dentro de uma funcao que aceita varios elementos -> esse ... é chamado de spread operator
 	fmt.Println(somaTotal2)
 
+	matrix := criaMatrix(2,5)
+	fmt.Println(matrix)
 
 
 	//slice de slice -> ou matriz de matriz
-	
+	//como criar: rows := [][]int{}, como no .c normalmente utiliza-se i e j para iterar
+
+	exibeMatrix(matrix)
+
+	//range
+
+	//for INDEX, ELEMENT := range SLICE {}
+
+	fruits := []string{"maça", "banana", "uva"}
+
+	for i, valor := range fruits{
+		fmt.Printf("matriz[%v] -> %v\n", i, valor)
+	}
+
 }
